@@ -29,8 +29,6 @@
                     <td>{{ orderItem.product_id  }}</td>
                     <td>{{ orderItem.unit_price }}</td>
                     <td>{{ orderItem.quantity }}</td>
-                    <!-- <td><router-link tag="button"
-                                        class="btn btn-light btn-sm">Ir</router-link></td> -->
                     <td><button type="button" tag="button" class="btn btn-info btn-sm" @click="edit(orderItem.order_id)">Edit</button></td>
                     <td><button type="button" tag="button" class="btn btn-danger btn-sm" @click="deleteP(orderItem.order_id, orderItem.line_item_id)">Delete</button></td>
                   </tr>

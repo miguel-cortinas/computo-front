@@ -33,8 +33,6 @@
                     <td>{{ customer.cust_email }}</td>
                     <td>{{ customer.income_level }}</td>
                     <td>{{ customer.region }}</td>
-                    <!-- <td><router-link tag="button"
-                                        class="btn btn-light btn-sm">Ir</router-link></td> -->
                     <td><button type="button" tag="button" class="btn btn-info btn-sm" @click="edit(customer.customer_id)">Edit</button></td>
                     <td><button type="button" tag="button" class="btn btn-danger btn-sm" @click="deleteP(customer.customer_id, customer.region)">Delete</button></td>
                   </tr>

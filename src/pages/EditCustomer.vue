@@ -2,7 +2,6 @@
   <card class="card" title="Edit Customer">
     <div>
       <form @submit.prevent>
-       <!-- Nombre -->
         <div class="row">
           <div class="col-md-4">
             <fg-input
@@ -15,7 +14,6 @@
             >
             </fg-input>
           </div>
-          <!-- Apellidos -->
           <div class="col-md-5">
             <fg-input
               type="text"
@@ -38,7 +36,6 @@
               </fg-input>
             </div>
         </div>
-        <!-- Email -->
         <div class="row">
           <div class="col-md-12">
             <fg-input
@@ -53,7 +50,6 @@
         </div>
         
         <div class="row">
-          <!-- Limite de credito -->
           <div class="col-md-4">
             <fg-input
               type="text"
@@ -64,7 +60,6 @@
             >
             </fg-input>
           </div>
-          <!-- Nivel de ingresos -->
           <div class="col-md-4">
             <fg-input
               type="text"
@@ -75,7 +70,6 @@
             >
             </fg-input>
           </div>
-          <!-- Region -->
           <div class="col-md-4">
             <label for="region">Region</label>
             <select id="region" class="form-control" placeholder="Enter a Region" v-model="customer.region" :value="customer.region">

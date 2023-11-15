@@ -106,7 +106,7 @@ export default {
         sales_rep_id: "",
         promotion_id: "",
       },
-      customers: [], // Agregué la variable customers para almacenar la lista de clientes.
+      customers: [], 
     };
   },
   methods: {

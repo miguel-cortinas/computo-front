@@ -27,7 +27,7 @@ export default {
     columns: Array,
     data: Array,
     type: {
-      type: String, // striped | hover
+      type: String,
       default: "striped",
     },
     title: {

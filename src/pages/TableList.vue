@@ -53,7 +53,7 @@ export default {
   },
   data() {
     return {
-      customers: [],
+      customers: null,
     };
   },
   methods: {
@@ -71,7 +71,7 @@ export default {
     },
     async edit(customer_id){
       try{
-            await axios.get(`https://dv786379-3000.usw3.devtunnels.ms/customers/${customer_id}/`)
+            await axios.get(`http://localhost:3000/customers/${customer_id}/`)
             .then(res => {
                 console.log(res);
                 this.$router.push(`/edit-customer/${customer_id}`)
@@ -85,7 +85,7 @@ export default {
     },
     async deleteP(customer_id, region){
       try{
-        await axios.delete(`https://dv786379-3000.usw3.devtunnels.ms/customers/${customer_id}/${region}`)
+        await axios.delete(`http://localhost:3000/customers/${customer_id}/${region}`)
         .then(res => {
             console.log(res);
             this.list();

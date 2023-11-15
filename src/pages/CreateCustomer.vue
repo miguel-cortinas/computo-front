@@ -118,11 +118,11 @@ export default {
       alert("Your data: " + JSON.stringify(this.user));
     },
     listCustomers() {
-      axios.get('https://dv786379-3000.usw3.devtunnels.ms/customers')
+      axios.get('http://localhost:3000/customers')
         .then(res => this.customers = res.data.obj);
     },
     created() {
-      axios.post('https://dv786379-3000.usw3.devtunnels.ms/customers', {
+      axios.post('http://localhost:3000/customers', {
         cust_first_name: this.customer.cust_first_name,
         cust_last_name: this.customer.cust_last_name,
         customer_id: this.customer.customer_id,

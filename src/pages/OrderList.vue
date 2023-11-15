@@ -62,7 +62,7 @@ export default {
   methods: {
     async list(){
       try{
-      await axios.get('https://dv786379-3000.usw3.devtunnels.ms/orders')
+      await axios.get('http://localhost:3000/orders')
       .then(res => this.orders = res.data);
       }catch(err){
         console.log(err)
@@ -70,7 +70,7 @@ export default {
     },
     async edit(order_id){
           try{
-            await axios.get(`https://dv786379-3000.usw3.devtunnels.ms/orders/${order_id}`)
+            await axios.get(`http://localhost:3000/orders/${order_id}`)
             .then(res => {
                 console.log(res);
                 this.$router.push(`/edit-order/${order_id}`)
@@ -84,7 +84,7 @@ export default {
     },
     async deleteP(order_id){
       try{
-        await axios.delete(`https://dv786379-3000.usw3.devtunnels.ms/orders/${order_id}`)
+        await axios.delete(`http://localhost:3000/orders/${order_id}`)
         .then(res => {
             console.log(res);
             this.list();

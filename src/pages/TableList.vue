@@ -59,7 +59,7 @@ export default {
   methods: {
     async list(){ 
       try{
-      await axios.get('https://dv786379-3000.usw3.devtunnels.ms/customers/')
+      await axios.get('http://localhost:3000/customers/')
       .then(res => {
         console.log(res)
         this.customers = res.data

@@ -6,10 +6,10 @@
           <div class="col-md-5">
             <fg-input
               type="text"
-              label="Order Date"
+              label="Order Id"
               :disabled="false"
-              placeholder="Enter the order date"
-              v-model="order.order_date"
+              placeholder="Enter the order Id"
+              v-model="order.order_id"
             >
             </fg-input>
           </div>

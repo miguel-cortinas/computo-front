@@ -7,7 +7,7 @@
             <fg-input
               type="text"
               label="Order Date"
-              :disabled="false"
+              :disabled="true"
               placeholder="Enter the order date"
               v-model="order.order_date"
               :value="order.order_date"
@@ -133,7 +133,7 @@ export default {
     edit(product_id){
       axios.put(`http://localhost:3000/products/${product_id}`, {
         order_id: this.order.order_id,
-        order_date: this.order.order_date,
+        // order_date: this.order.order_date,
         order_mode: this.order.order_mode,
         customer_id: this.order.customer_id,
         order_status: this.order.order_status,

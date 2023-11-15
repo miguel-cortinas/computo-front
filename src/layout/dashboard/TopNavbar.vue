@@ -61,4 +61,12 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+.nav-item{
+  width: 50%;
+  margin-right: auto
+}
+.navbar-nav{
+  margin: auto
+}
+</style>

@@ -130,9 +130,9 @@
           </div>
         </div>
         <div class="text-center">
-          <p-button type="info" round @click.prevent="edit">
+          <button type="info" round @click.prevent="edit">
             Edit Product
-          </p-button>
+          </button>
         </div>
         <div class="clearfix"></div>
       </form>
@@ -169,7 +169,7 @@ export default {
     },
     list(){
       axios.get('http://localhost:3000/products/' + this.id)
-      .then(res => this.product = res.data.obj);
+      .then(res => this.product = res.data);
     },
     edit(product_id){
       axios.put(`http://localhost:3000/products/${product_id}`, {

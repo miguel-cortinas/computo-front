@@ -32,22 +32,22 @@ const routes = [
       },
       // Edits
       {
-        path: "edit-order-item", // path: "edit-order-item/:id",
+        path: "edit-order-item/:id", // path: "edit-order-item/:id",
         name: "edit-order-item",
         component: EditOrderItems,
       },
       {
-        path: "edit-order", // path: "edit-order/:id",
+        path: "edit-order/:id", // path: "edit-order/:id",
         name: "edit-order",
         component: EditOrder,
       },
       {
-        path: "edit-product", // path: "edit-product/:id",
+        path: "edit-product/:id", // path: "edit-product/:id",
         name: "edit-product",
         component: EditProduct,
       },
       {
-        path: "edit-customer", // path: "edit-customer/:id",
+        path: "edit-customer/:id", // path: "edit-customer/:id",
         name: "edit-customer",
         component: EditCustomer,
       },

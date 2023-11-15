@@ -86,16 +86,15 @@
               placeholder="Enter a promotion code"
               v-model="order.promotion_id"
               :value="order.promotion_id"
-              :disabled="true"
             >
             </fg-input>
           </div>
         </div>
 
         <div class="text-center">
-          <p-button type="info" round @click.prevent="edit">
+          <button type="info" round @click.prevent="edit">
             Edit Order
-          </p-button>
+          </button>
         </div>
         <div class="clearfix"></div>
       </form>
@@ -129,9 +128,9 @@ export default {
     },
     list(){
       axios.get('http://localhost:3000/orders/' + this.id)
-           .then(res => this.order = res.data.obj);
+           .then(res => this.order = res.data);
     },
-    edit(){
+    edit(product_id){
       axios.put(`http://localhost:3000/products/${product_id}`, {
         order_id: this.order.order_id,
         order_date: this.order.order_date,

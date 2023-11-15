@@ -88,9 +88,9 @@
         </div>
 
         <div class="text-center">
-          <p-button type="info" round @click.prevent="edit">
+          <button type="info" round @click.prevent="edit(id)">
             Edit Customer
-          </p-button>
+          </button>
         </div>
         <div class="clearfix"></div>
       </form>
@@ -98,6 +98,7 @@
   </card>
 </template>
 <script>
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -117,12 +118,16 @@ export default {
     updateProfile() {
       alert("Your data: " + JSON.stringify(this.user));
     },
-    list(){
-      axios.get('http://localhost:3000/customers/' + this.id)
-      .then(res => this.customer = res.data.obj);
+    async list(){
+      try{
+      await axios.get('http://localhost:3000/customers/' + this.id)
+      .then(res => this.customer = res.data);
+      }catch(err){
+        console.log(err)
+      }
     },
-    edit(customer_id){
-          axios.put(`http://localhost:3000/customers/${customer_id}`, {
+    edit(id){
+          axios.put(`http://localhost:3000/customers/${id}`, {
               cust_first_name: this.customer.cust_first_name,
               cust_last_name: this.customer.cust_last_name,
               customer_id: this.customer.customer_id,
@@ -133,13 +138,16 @@ export default {
           })
           .then(res => {
               console.log(res);
-              this.$router.push('/admin/users')
+              this.$router.push('/table-list')
           }).catch(err => {
               this.msg = err.response.data.message;
               console.log(err);
           });
       }
   },
+  mounted(){
+    this.list();
+  }
 };
 </script>
 <style></style>

@@ -122,9 +122,9 @@
         </div>
 
         <div class="text-center">
-          <p-button type="success" round @click.prevent="created" class="custom-button">
+          <button type="success" round @click.prevent="created" class="custom-button">
             Create Product
-          </p-button>
+          </button>
         </div>
         <div class="clearfix"></div>
       </form>

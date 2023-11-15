@@ -80,15 +80,14 @@
               <option>B</option>
               <option>C</option>
               <option>D</option>
-              <option>E</option>
             </select>
           </div>
         </div>
 
         <div class="text-center">
-          <p-button type="submit" round @click.prevent="created" class="custom-button">
+          <button type="submit" round @click.prevent="created" class="custom-button">
             Create Customer
-          </p-button>
+          </button>
         </div>
         <div class="clearfix"></div>
       </form>

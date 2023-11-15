@@ -80,9 +80,9 @@
         </div>
 
         <div class="text-center">
-          <p-button type="info" round @click.prevent="created" class="custom-button">
+          <button type="info" round @click.prevent="created" class="custom-button">
             Create Order
-          </p-button>
+          </button>
         </div>
         <div class="clearfix"></div>
       </form>
@@ -115,7 +115,7 @@ export default {
     },
     listCustomers() {
       axios.get('http://localhost:3000/customers')
-        .then(res => this.customers = res.data.obj)
+        .then(res => this.customers = res.data)
         .catch(err => console.error(err));
     },
     created() {

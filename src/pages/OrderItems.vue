@@ -3,9 +3,11 @@
     <div class="col-12">
       <card class="strpied-tabled-with-hover" body-classes="table-full-width table-responsive">
             <template slot="header">
-              <h4 class="card-title">Order Items</h4>
-              <p class="card-category">Here is a list of all the order items in the database</p>
-            </template>
+          <div style="background-color: rgba(5, 113, 12, 0.118); padding: 15px;">
+            <h4 class="card-title text-info">Order Items</h4>
+            <p class="card-category">Here is a list of all the Order Items in the database</p>
+          </div>
+        </template>
 
               <table class="table-hover table-striped" style="padding: 15%; width: 100%; margin-left: 1%;">
                 <thead>
@@ -55,7 +57,7 @@ export default {
   methods: {
     async list(){
       try{
-        await axios.get('http://localhost:3000/order_items')
+        await axios.get(' http://localhost:3000/order_items')
         .then(res => this.orderItems = res.data);
       }catch(err){
         console.log(err);
@@ -63,7 +65,7 @@ export default {
     },
     async edit(order_item_id) {
       try {
-        await axios.get(`http://localhost:3000/order_items/${order_item_id}`)
+        await axios.get(` http://localhost:3000/order_items/${order_item_id}`)
           .then(res => {
             console.log(res);
             this.$router.push(`/order_item-edit/${order_item_id}`)
@@ -77,7 +79,7 @@ export default {
     },
     async deleteP(order_item_id,line_item_id){
       try{
-        await axios.delete(`http://localhost:3000/order_items/${order_item_id}/${line_item_id}`)
+        await axios.delete(` http://localhost:3000/order_items/${order_item_id}/${line_item_id}`)
         .then(res => {
             console.log(res);
             this.list();
@@ -95,4 +97,12 @@ export default {
   },
 };
 </script>
-<style></style>
+<style scoped>
+.text-info {
+  color: #000000 !important; 
+}
+
+
+
+
+</style>

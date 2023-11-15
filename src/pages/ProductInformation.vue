@@ -2,10 +2,12 @@
   <div class="row">
     <div class="col-12">
       <card class="strpied-tabled-with-hover" body-classes="table-full-width table-responsive">
-            <template slot="header">
-              <h4 class="card-title">Product Information</h4>
-              <p class="card-category">Here is a list of all the products in the database</p>
-            </template>
+        <template slot="header">
+          <div style="background-color: rgba(5, 113, 12, 0.118); padding: 15px;">
+            <h4 class="card-title">Product Information</h4>
+            <p class="card-category">Here is a list of all the products in the database</p>
+          </div>
+        </template>
 
               <table class="table-hover table-striped" style="padding: 15%; width: 100%; margin-left: 1%;">
                 <thead>
@@ -67,7 +69,7 @@ export default {
   methods: {
     async list(){
       try{
-      await axios.get('http://localhost:3000/products')
+      await axios.get(' http://localhost:3000/products')
       .then(res => this.products = res.data);
       }catch(err){
         console.log(err)
@@ -75,7 +77,7 @@ export default {
     },
     async edit(product_id){
       try{
-            await axios.get(`http://localhost:3000/products/${product_id}`)
+            await axios.get(` http://localhost:3000/products/${product_id}`)
             .then(res => {
                 console.log(res);
                 this.$router.push(`/edit-product/${product_id}`)
@@ -89,7 +91,7 @@ export default {
     },
     async deleteP(product_id){
       try{
-        await axios.delete(`http://localhost:3000/products/${product_id}`)
+        await axios.delete(` http://localhost:3000/products/${product_id}`)
         .then(res => {
             console.log(res);
             this.list();

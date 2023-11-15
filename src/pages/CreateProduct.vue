@@ -158,7 +158,7 @@ export default {
       alert("Your data: " + JSON.stringify(this.user));
     },
     created(){
-      axios.post('http://localhost:3000/products', {
+      axios.post(' http://localhost:3000/products', {
         product_id: this.product.product_id,
         product_name: this.product.product_name,
         product_description: this.product.product_description,
@@ -186,7 +186,7 @@ export default {
 <style scoped>
 
 .custom-card {
-  background-color: rgba(14, 213, 27, 0.118); 
+  background-color: rgba(5, 113, 12, 0.118); 
   border: 1px solid #035c12; 
   padding: 20px;
   color: #000; 

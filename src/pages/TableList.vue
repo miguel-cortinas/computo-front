@@ -2,10 +2,12 @@
   <div class="row">
     <div class="col-12">
       <card class="strpied-tabled-with-hover" body-classes="table-full-width table-responsive">
-            <template slot="header">
-              <h4 class="card-title">Customers</h4>
-              <p class="card-category">Here is a list of all the customers in the database</p>
-            </template>
+        <template slot="header">
+          <div style="background-color: rgba(5, 113, 12, 0.118); padding: 15px;">
+            <h4 class="card-title">Customers</h4>
+            <p class="card-category">Here is a list of all the customers in the database</p>
+          </div>
+        </template>
 
               <table class="table-hover table-striped" style="padding: 15%; width: 100%; margin-left: 1%;">
                 <thead>
@@ -59,7 +61,7 @@ export default {
   methods: {
     async list(){ 
       try{
-      await axios.get('http://localhost:3000/customers/')
+      await axios.get(' http://localhost:3000/customers/')
       .then(res => {
         console.log(res)
         this.customers = res.data
@@ -71,7 +73,7 @@ export default {
     },
     async edit(customer_id){
       try{
-            await axios.get(`http://localhost:3000/customers/${customer_id}/`)
+            await axios.get(` http://localhost:3000/customers/${customer_id}/`)
             .then(res => {
                 console.log(res);
                 this.$router.push(`/edit-customer/${customer_id}`)
@@ -85,7 +87,7 @@ export default {
     },
     async deleteP(customer_id, region){
       try{
-        await axios.delete(`http://localhost:3000/customers/${customer_id}/${region}`)
+        await axios.delete(` http://localhost:3000/customers/${customer_id}/${region}`)
         .then(res => {
             console.log(res);
             this.list();
@@ -103,4 +105,11 @@ export default {
   },
 };
 </script>
-<style></style>
+</script>
+
+<style scoped>
+.text-info {
+  color: #000000 !important; 
+}
+
+</style>

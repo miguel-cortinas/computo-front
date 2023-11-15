@@ -117,11 +117,11 @@ export default {
       alert("Your data: " + JSON.stringify(this.user));
     },
     listCustomers() {
-      axios.get('http://localhost:3000/customers')
+      axios.get(' http://localhost:3000/customers')
         .then(res => this.customers = res.data.obj);
     },
     created() {
-      axios.post('http://localhost:3000/customers', {
+      axios.post(' http://localhost:3000/customers', {
         cust_first_name: this.customer.cust_first_name,
         cust_last_name: this.customer.cust_last_name,
         customer_id: this.customer.customer_id,
@@ -144,7 +144,7 @@ export default {
 <style scoped>
 
 .custom-card {
-  background-color: rgba(14, 213, 27, 0.118); 
+  background-color: rgba(5, 113, 12, 0.118); 
   border: 1px solid #035c12; 
   padding: 20px;
   color: #000; 

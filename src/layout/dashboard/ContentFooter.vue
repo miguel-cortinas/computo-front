@@ -28,14 +28,14 @@ export default {};
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ocupa el 100% del viewport height */
+  min-height: 100vh; 
   margin: 0;
 }
 
 .footer {
-  margin-top: auto; /* Empuja el footer hacia abajo */
+  margin-top: auto; 
   width: 100%;
-  background-color: #f5f5f5; /* Cambia el color de fondo según sea necesario */
-  /* Otras propiedades de estilo para el footer */
+  background-color: #f5f5f5; 
+ 
 }
 </style>

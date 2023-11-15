@@ -1,7 +1,7 @@
 <template>
-  <card class="card" title="Create a New Product">
+  <card class="custom-card" title="Create a New Product">
     <div>
-      <form @submit.prevent="created">
+      <form @submit.prevent="created" class="custom-form">
         <div class="row">
           <div class="col-md-5">
             <fg-input
@@ -14,14 +14,14 @@
             </fg-input>
           </div>
           <div class="col-md-4">
-            <label for="region">Product Status</label>
-              <select id="region" class="form-control" placeholder="Select a status" v-model="product.product_status">
-                <option>Orderable</option>
-                <option>Obsolete</option>
-                <option>Under Development</option>
-                <option>Planned</option>
-              </select>
-            </div>
+            <label for="product_status">Product Status</label>
+            <select id="product_status" class="form-control" placeholder="Select a status" v-model="product.product_status">
+              <option>Orderable</option>
+              <option>Obsolete</option>
+              <option>Under Development</option>
+              <option>Planned</option>
+            </select>
+          </div>
           <div class="col-md-3">
             <fg-input
               type="text"
@@ -47,7 +47,7 @@
             <fg-input
               type="text"
               label="Product Id"
-              placeholder="Enter a id for the product"
+              placeholder="Enter an id for the product"
               v-model="product.product_id"
             >
             </fg-input>
@@ -98,7 +98,7 @@
             <fg-input
               type="text"
               label="Catalog URL"
-              placeholder="Enter a catalog url for the product"
+              placeholder="Enter a catalog URL for the product"
               v-model="product.catalog_url"
             >
             </fg-input>
@@ -120,8 +120,9 @@
             </div>
           </div>
         </div>
+
         <div class="text-center">
-          <p-button type="info" round @click.prevent="created">
+          <p-button type="success" round @click.prevent="created" class="custom-button">
             Create Product
           </p-button>
         </div>
@@ -130,7 +131,10 @@
     </div>
   </card>
 </template>
+
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -173,8 +177,31 @@ export default {
         this.msg = err.response.data.message;
         console.log(err);
       });
-    }
+    },
+    
   },
 };
 </script>
-<style></style>
+
+<style scoped>
+
+.custom-card {
+  background-color: rgba(14, 213, 27, 0.118); 
+  border: 1px solid #035c12; 
+  padding: 20px;
+  color: #000; 
+}
+
+.custom-form {
+  max-width: 800px; 
+  margin: 0 auto; 
+}
+
+.custom-button {
+  background-color: #93f1ce; 
+  color: rgb(10, 1, 1); 
+  border: 1px solid #035c12; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+}
+</style>
